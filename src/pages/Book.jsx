@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
- 
+import Header from "../components/Header";
 
 function Book() {
 
@@ -53,8 +53,9 @@ function Book() {
 
 
     return (
+      
         <div>
-       
+          <Header/>
             <Form onSubmit = {submitBook}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Title</Form.Label>
@@ -72,7 +73,11 @@ function Book() {
             </Form>
         </div>
       );
+
+      
+      
  
+
 }
 
 export default Book;
