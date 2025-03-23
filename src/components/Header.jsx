@@ -12,8 +12,9 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/book">URL Search</Nav.Link>
+            <Nav.Link href="/book">Book</Nav.Link>
             <Nav.Link href="/Login">Logout</Nav.Link>
+            <Nav.Link href="/URLSearch">URL Search</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

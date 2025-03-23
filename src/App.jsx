@@ -3,6 +3,7 @@
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Book from './pages/book'
+import URLSearch from './pages/URLSearch'
 import { useNavigate } from 'react-router-dom';
 import ProtectedRoutes from './pages/utils/protectedroutes';
 function App() {
@@ -16,10 +17,14 @@ function App() {
       <div>
  
       <Routes>
-            <Route path="/login" element = {<Login/>}/>
+
+        <Route path="/login" element = {<Login/>}/>
+
         <Route element = {<ProtectedRoutes/>}>
            <Route path="/" element = {<Home/>}/>
+           <Route path="/URLSearch" element = {<URLSearch/>}/>
            <Route path="/book" element = {<Book/>}/>
+
         </Route>
         
       </Routes>    

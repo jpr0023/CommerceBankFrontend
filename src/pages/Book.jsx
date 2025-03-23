@@ -33,7 +33,7 @@ function Book() {
         .then(res=>{
           console.log(res)
           if(res!==null){
-            navigate("/home");
+            navigate("/");
           }else{
             alert('fails');
           }
