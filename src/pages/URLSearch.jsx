@@ -43,14 +43,22 @@ import Header from "../components/Header";
 
 
 
+//  To Explain thought process
+//  fetch to go through. Have to use post to get it to work for a response body.
+//  Switched up the urls first link to website not sure if it matters the naming at all but just did it incase.
+//  Changed up the bottom to data so we know that deals with that instead of seeing res each time kind of gets confusing.
+//  But that checks to see if there is something there if there is saves it to session storage
+
+// What sessionstorage gives us the ability to do is keep it around the entire time that the page is open. but clears when we close the tab
+// I can rename the website tag if you would like not sure if it matters but to keep transparency can do that. To make it easier like setting it to url or something like that.
+// If you have any questions feel free to message me on discord(Brett)
+
 
 function URLSearch() {
 
     const[urls, setUrls] = useState({
-        website:'https://google.com',
+        website:'',
       });
-
-    const[urlJson, setUrlJson] = useState([]);
 
     const navigate = useNavigate();  
 
@@ -73,27 +81,21 @@ function URLSearch() {
             }
           })
         .then((data) => {
-          setUrlJson(data)
-          console.log(data);
-        })
-        .then(res=>{
-          if(res!==null){
-            navigate("/urlTable");
-          }else{
-            alert('fails');
+            if (data !== null){
+              sessionStorage.setItem("url",JSON.stringify(data));
+              console.log(data);
+              navigate("/urlTable");
           }
-        
-        });
-    
+          else{
+            alert("Failed");
+          }
+        })    
     }  
 
     const changeValue=(e)=>{
         setUrls({
          ...urls, [e.target.name]:e.target.value  
         });
-        console.log(urls);
-        console.log(e.target.name + " name ");
-        console.log(e.target.value + " value " );
     }
 
 
