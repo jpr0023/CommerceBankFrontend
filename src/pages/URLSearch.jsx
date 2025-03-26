@@ -46,22 +46,53 @@ import Header from "../components/Header";
 
 function URLSearch() {
 
-    const[urls, setUrls] = useState({
+    const[urls, URLS] = useState({
         url:'',
       });
 
     const navigate = useNavigate();  
 
-
+    const showinfo =(e)=>{
+      e.preventDefault();
+      fetch("http://localhost:8081/analyze",
+        {
+        method:"GET",
+        headers:{
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(urls)
+      })
+      
+      .then(res=>{
+          console.log(1,res);
+          if(res.status === 201){
+            return res.json();
+          }else{
+            return null;
+          }
+        })
+      .then(res=>{
+        console.log(res)
+        if(res!==null){
+          navigate("/");
+        }else{
+          alert('fails');
+        }
+      
+      });
+  
+  }  
     const submitURL =(e)=>{
         e.preventDefault();
-        fetch("http://localhost:8081/analyze", {
+        fetch("http://localhost:8081/urls",
+          {
           method:"POST",
           headers:{
             "Content-Type" : "application/json"
           },
           body: JSON.stringify(urls)
         })
+        
         .then(res=>{
             console.log(1,res);
             if(res.status === 201){
@@ -84,7 +115,7 @@ function URLSearch() {
 
     const changeValue=(e)=>{
         console.log(e);
-        setUrls({
+        URLS({
          ...urls, [e.target.name]:e.target.value  
         });
         console.log(e.target.name + " name "  );
@@ -96,16 +127,21 @@ function URLSearch() {
       
         <div>
           <Header/>
-            <Form onSubmit = {submitURL}>
+            <Form onSubmit = {showinfo}>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Enter URL to Analyze</Form.Label>
-                    <Form.Control type="text" placeholder="Enter URL" onChange = {changeValue} name="url" />
+                    <Form.Label>Save URL</Form.Label>
+                    <Form.Control type="text" placeholder="Enter a URL to Analyze" onChange = {changeValue} name="url" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                    Submit  
+                    Analyze  
+                </Button>
+                <Button onClick = {submitURL} variant="primary" type="submit">
+                    Save  
                 </Button>
             </Form>
+          
+          
         </div>
       );
 
