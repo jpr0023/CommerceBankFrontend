@@ -47,8 +47,10 @@ import Header from "../components/Header";
 function URLSearch() {
 
     const[urls, setUrls] = useState({
-        url:'',
+        website:'https://google.com',
       });
+
+    const[urlJson, setUrlJson] = useState([]);
 
     const navigate = useNavigate();  
 
@@ -64,16 +66,19 @@ function URLSearch() {
         })
         .then(res=>{
             console.log(1,res);
-            if(res.status === 201){
+            if(res.status === 200){
               return res.json();
             }else{
               return null;
             }
           })
+        .then((data) => {
+          setUrlJson(data)
+          console.log(data);
+        })
         .then(res=>{
-          console.log(res)
           if(res!==null){
-            navigate("/");
+            navigate("/urlTable");
           }else{
             alert('fails');
           }
@@ -83,11 +88,11 @@ function URLSearch() {
     }  
 
     const changeValue=(e)=>{
-        console.log(e);
         setUrls({
          ...urls, [e.target.name]:e.target.value  
         });
-        console.log(e.target.name + " name "  );
+        console.log(urls);
+        console.log(e.target.name + " name ");
         console.log(e.target.value + " value " );
     }
 
@@ -97,9 +102,9 @@ function URLSearch() {
         <div>
           <Header/>
             <Form onSubmit = {submitURL}>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group controlId="URL">
                     <Form.Label>Enter URL to Analyze</Form.Label>
-                    <Form.Control type="text" placeholder="Enter URL" onChange = {changeValue} name="url" />
+                    <Form.Control type="text" placeholder="Enter URL" onChange = {changeValue} name="website" value={urls[0]?.website}/>
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
