@@ -7,6 +7,7 @@ import Book from './pages/Book'
 import URLSearch from './pages/URLSearch'
 import { useNavigate } from 'react-router-dom';
 import ProtectedRoutes from './pages/utils/protectedroutes';
+import URLTable from './pages/URLtable';
 function App() {
   //const [count, setCount] = useState(0)
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function App() {
            <Route path="/SavedURLs" element = {<Saved/>}/>
            <Route path="/URLSearch" element = {<URLSearch/>}/>
            <Route path="/book" element = {<Book/>}/>
-
+            <Route path="/urlTable" element={<URLTable/>}></Route>
         </Route>
         
       </Routes>    

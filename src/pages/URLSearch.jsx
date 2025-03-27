@@ -43,10 +43,20 @@ import Header from "../components/Header";
 
 
 
+//  To Explain thought process
+//  fetch to go through. Have to use post to get it to work for a response body.
+//  Switched up the urls first link to website not sure if it matters the naming at all but just did it incase.
+//  Changed up the bottom to data so we know that deals with that instead of seeing res each time kind of gets confusing.
+//  But that checks to see if there is something there if there is saves it to session storage
+
+// What sessionstorage gives us the ability to do is keep it around the entire time that the page is open. but clears when we close the tab
+// I can rename the website tag if you would like not sure if it matters but to keep transparency can do that. To make it easier like setting it to url or something like that.
+// If you have any questions feel free to message me on discord(Brett)
+
 
 function URLSearch() {
 
-    const[urls, URLS] = useState({
+    const[urls, setUrls] = useState({
         url:'',
       });
 
@@ -95,31 +105,29 @@ function URLSearch() {
         
         .then(res=>{
             console.log(1,res);
-            if(res.status === 201){
+            if(res.status === 200){
               return res.json();
             }else{
               return null;
             }
           })
-        .then(res=>{
-          console.log(res)
-          if(res!==null){
-            navigate("/");
-          }else{
-            alert('fails');
+        .then((data) => {
+            if (data !== null){
+              sessionStorage.setItem("url",JSON.stringify(data));
+              console.log(data);
+              navigate("/urlTable");
           }
-        
-        });
-    
+          else{
+            alert("Failed");
+          }
+        })    
     }  
 
     const changeValue=(e)=>{
         console.log(e);
-        URLS({
+        setUrls({
          ...urls, [e.target.name]:e.target.value  
         });
-        console.log(e.target.name + " name "  );
-        console.log(e.target.value + " value " );
     }
 
 
@@ -127,10 +135,10 @@ function URLSearch() {
       
         <div>
           <Header/>
-            <Form onSubmit = {showinfo}>
+            <Form onSubmit = {submitURL}>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Save URL</Form.Label>
-                    <Form.Control type="text" placeholder="Enter a URL to Analyze" onChange = {changeValue} name="url" />
+                    <Form.Label>Enter URL to Analyze</Form.Label>
+                    <Form.Control type="text" placeholder="Enter URL" onChange = {changeValue} name="url" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
