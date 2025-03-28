@@ -68,7 +68,7 @@ function URLSearch() {
         fetch("http://localhost:8081/analyze", {
           method:"POST",
           headers:{
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
           },
           body: JSON.stringify(urls)
         })
