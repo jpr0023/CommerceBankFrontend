@@ -13,6 +13,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/Login">Logout</Nav.Link>
             <Nav.Link href="/URLSearch">URL Search</Nav.Link>
+            <Nav.Link href="/urlTable">URL Table</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

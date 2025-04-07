@@ -24,7 +24,6 @@ function App() {
         <Route element = {<ProtectedRoutes/>}>
            <Route path="/" element = {<Home/>}/>
            <Route path="/URLSearch" element = {<URLSearch/>}/>
-           <Route path="/book" element = {<Book/>}/>
             <Route path="/urlTable" element={<URLTable/>}></Route>
         </Route>
         
