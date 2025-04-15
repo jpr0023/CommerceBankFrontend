@@ -7,17 +7,18 @@ import DisplayResponseHeaders from "./DisplayResponseHeaders";
 export default function reportTable(){
 
     const dataJson = JSON.parse(sessionStorage.getItem('url'));
-    let title = dataJson?.url?.url.toLowerCase();
+    let title = dataJson?.url?.urlValue?.toLowerCase();
     let holder;
+   
+        if (title.startsWith("https://www.")){
+            title = title.substring(12);
+        }
+        else if (title.startsWith("http://www.")){
+            title = title.substring(11);
+        }
 
-    if (title.startsWith("https://")){
-        title = title.substring(8);
-    }
-    else if (title.startsWith("http://")){
-        title = title.substring(7);
-    }
-
-    title = title.charAt(0).toUpperCase() + title.slice(1);
+        title = title.charAt(0).toUpperCase() + title.slice(1);
+    
     // Use effect to grab the length of the response headers?
     // Have the 4 or 5 lines going over all of the other stuff
 
