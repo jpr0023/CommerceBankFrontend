@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import './DisplayBubble.css'
 
 export default function DisplayBubble({title, value}){
@@ -22,29 +21,4 @@ export default function DisplayBubble({title, value}){
 
 
 
-=======
-import './DisplayBubble.css'
-
-export default function DisplayBubble({title, value}){
-
-
-
-    return(
-
-        <>
-        
-              <div className="bubbleRow">
-                <span className="rowTitle">{title}</span>
-                <span className="rowValue">{value}</span>
-              </div>
-        
-        </>
-
-    );
-
-
-
-
-
->>>>>>> origin/jasonfront
 }

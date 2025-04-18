@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .urlTable{
     width: 900px;
     background-color: lightblue;
@@ -15,21 +14,3 @@
 }
 
 
-=======
-.urlTable{
-    width: 900px;
-    background-color: lightblue;
-    border-radius: 15%;
-    padding: 1.5rem 2rem;
-    margin-top: 3rem;
-}
-
-.urlTitle{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-
->>>>>>> origin/jasonfront
