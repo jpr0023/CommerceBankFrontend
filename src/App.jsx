@@ -23,7 +23,7 @@ function App() {
       
       <Routes>
 
-          <Route element = {<ProtectedRoutes/>}>
+          <Route element = {<ProtectedRoutes/>}/>
            <Route path="/" element = {<Login/>}/>
           <Route element = {<ProtectedRoutes/>}>
            <Route path="/" element = {<Login/>}/>
