@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./login.css"
+import Button from 'react-bootstrap/Button';
 function Login() {
   const navigate = useNavigate();
 
@@ -48,21 +49,26 @@ function Login() {
   };
 
   return (
+
+    <form>
+      <header>
+        Login
+      </header>
+       <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" onChange={changeUserDetails} placeholder="Enter Username"/>
+       </div>
+       <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" onChange={changeUserDetails} placeholder="Enter Password"/>
+       </div>
+  
+         <Button variant = "success" type="submit" class="btn btn-primary">Submit</Button>
+         
+      </form>
+
     
-    <div>
-    <p>
-    <label>
-      Username:
-        <input type="text" name="username" onChange={changeUserDetails} />
-      </label></p>
-      <p><label>Password:
-        <input type="password" name="password" onChange={changeUserDetails} />
-        </label>
-      </p>
-        <button onClick={handleLogin}>Login</button>
-      
-      <p className='Invalid'>{text}</p>
-    </div>
+    
   );
 }
 export default Login;

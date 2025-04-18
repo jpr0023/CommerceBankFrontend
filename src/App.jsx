@@ -17,10 +17,14 @@ function App() {
     
     <>
       <Header></Header>
+      <Header></Header>
       <div>
+      
       
       <Routes>
 
+          <Route element = {<ProtectedRoutes/>}>
+           <Route path="/" element = {<Login/>}/>
           <Route element = {<ProtectedRoutes/>}>
            <Route path="/" element = {<Login/>}/>
            <Route path="/URLSearch" element = {<URLSearch/>}/>

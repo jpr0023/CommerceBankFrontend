@@ -78,10 +78,10 @@ function URLSearch() {
             <Form onSubmit = {submitURL}>
                 <Form.Group controlId="URL">
                     <Form.Label>Enter URL to Analyze</Form.Label>
-                    <Form.Control type="text" placeholder="Enter URL" onChange = {changeValue} name="website" value={urls.website}/>
+                    <Form.Control class="form-control"  type="text" placeholder="Enter URL" onChange = {changeValue} name="website" value={urls.website}/>
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="success" type="submit">
                     Submit  
                 </Button>
             </Form>
