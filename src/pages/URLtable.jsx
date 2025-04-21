@@ -7,6 +7,7 @@ export default function URLTABLE(){
 
     return (
         <>
+            <Header></Header>
             <ReportTable/>
         </>
     );

@@ -1,6 +1,7 @@
 import SavedSearches from "../components/SavedSearches";
 import RecentSearches from "../components/RecentSearches";
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
 
 export default function UserSearches(){
 
@@ -35,6 +36,8 @@ export default function UserSearches(){
     // Returns a page that has both the saved Searches and Recent Searches on the same thing will style this a little bit more just want to get the idea of it down
     return (
         <>
+            <Header></Header>
+
             <header>Saved Searches</header>
             <SavedSearches searches={searches?.savedSearches || []}/>
             <header>Recent Searches</header>

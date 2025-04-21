@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import './ReportTable.css'
 import DisplayBubble from "./DisplayBubble";
 import DisplayResponseHeaders from "./DisplayResponseHeaders";
-
+import { useNavigate } from "react-router-dom";
 
 export default function reportTable(){
 
     const dataJson = JSON.parse(sessionStorage.getItem('url'));
     let title = dataJson?.url?.urlValue?.toLowerCase();
     let holder;
+    const Navigate = useNavigate();
    
         if (title.startsWith("https://www.")){
             title = title.substring(12);
@@ -22,7 +23,9 @@ export default function reportTable(){
     // Use effect to grab the length of the response headers?
     // Have the 4 or 5 lines going over all of the other stuff
 
-
+    function navigateOver(){
+        Navigate("/searches");
+    }
 
     return(
         <>
@@ -36,7 +39,7 @@ export default function reportTable(){
 
             <DisplayResponseHeaders headers={dataJson?.headers} />
             
-            <button>Full History</button>
+            <button onClick={() => navigateOver()}>Full History</button>
 
             </div>
         

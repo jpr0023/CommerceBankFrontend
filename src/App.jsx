@@ -17,10 +17,7 @@ function App() {
   return (
     
     <>
-      <Header></Header>
       <div>
-      
-      
       <Routes>
 
           <Route element = {<ProtectedRoutes/>}/>

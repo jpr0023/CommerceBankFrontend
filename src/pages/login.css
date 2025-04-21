@@ -23,3 +23,8 @@ header{
     font-weight: bold;
 }
 
+a p {
+    color: Lime;
+    border-bottom: none;
+}
+

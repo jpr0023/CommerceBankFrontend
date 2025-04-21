@@ -61,7 +61,7 @@ function Login() {
         <label>Password</label>
         <input type="password" className="form-control" name='password' onChange={changeUserDetails} placeholder="Enter Password"/>
        </div>
-  
+       <a href='/createAccount'><p>Create Account</p></a>
          <Button variant = "success"  className="btn btn-primary" onClick={handleLogin}>Submit</Button>
          
       </form>

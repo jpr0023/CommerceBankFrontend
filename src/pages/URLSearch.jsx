@@ -76,6 +76,7 @@ function URLSearch() {
     return (
       
         <div>
+            <Header></Header>
             <Form onSubmit = {submitURL}>
                 <Form.Group controlId="URL">
                     <Form.Label>Enter URL to Analyze</Form.Label>
