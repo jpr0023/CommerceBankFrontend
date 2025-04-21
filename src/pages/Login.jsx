@@ -15,8 +15,7 @@ function Login() {
     setLogin({
       ...login,[e.target.name]:e.target.value
   });
-  console.log(login)
-  console.log(sessionStorage.getItem("login"));
+  console.log(login);
   }
 
   const handleLogin = () => {
@@ -54,16 +53,16 @@ function Login() {
       <header>
         Login
       </header>
-       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" onChange={changeUserDetails} placeholder="Enter Username"/>
+       <div className="form-group">
+        <label>Username</label>
+        <input type="text" className="form-control" name='username' onChange={changeUserDetails} placeholder="Enter Username"/>
        </div>
-       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" onChange={changeUserDetails} placeholder="Enter Password"/>
+       <div className="form-group">
+        <label>Password</label>
+        <input type="password" className="form-control" name='password' onChange={changeUserDetails} placeholder="Enter Password"/>
        </div>
   
-         <Button variant = "success" type="submit" class="btn btn-primary">Submit</Button>
+         <Button variant = "success"  className="btn btn-primary" onClick={handleLogin}>Submit</Button>
          
       </form>
 

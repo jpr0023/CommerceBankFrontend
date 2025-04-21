@@ -25,16 +25,15 @@ function URLSearch() {
     const navigate = useNavigate();  
 
 
-
     useEffect(() => {
       const token = sessionStorage.getItem("login");
       if (!token) {
         setTimeout(() => navigate("/"), 0); // Delay just enough to prevent early render issues
       }
+      console.log(sessionStorage.getItem("login"));
     }, [navigate]);
     
     
-    console.log(sessionStorage.getItem("login"));
     const submitURL =(e)=>{
         e.preventDefault();
         urls.token = sessionStorage.getItem("login");
@@ -48,6 +47,7 @@ function URLSearch() {
         .then(res=>{
             console.log(1,res);
             if(res.status === 200){
+              console.log(res.headers.get("Content-Type"));
               return res.json();
             }else{
               return null;
@@ -69,6 +69,7 @@ function URLSearch() {
         setUrls({
          ...urls, [e.target.name]:e.target.value  
         });
+        console.log(urls);
     }
 
 
@@ -78,7 +79,7 @@ function URLSearch() {
             <Form onSubmit = {submitURL}>
                 <Form.Group controlId="URL">
                     <Form.Label>Enter URL to Analyze</Form.Label>
-                    <Form.Control class="form-control"  type="text" placeholder="Enter URL" onChange = {changeValue} name="website" value={urls.website}/>
+                    <Form.Control className="form-control"  type="text" placeholder="Enter URL" onChange = {changeValue} name="website" value={urls.website}/>
                 </Form.Group>
 
                 <Button variant="success" type="submit">
