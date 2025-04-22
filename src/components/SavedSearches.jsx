@@ -1,11 +1,11 @@
 
-
-
-
-
-
-
 function searchRow(search){
+
+    function renameSearch(id){
+        
+    }
+
+
     console.log(search);
     if (search != null){
     return(
@@ -15,7 +15,7 @@ function searchRow(search){
         
             <div className="searchRow">
                 <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
-                <button>Rename</button>
+                <button onClick={() => renameSearch(search?.id)}>Rename</button>
                 <button>Rescan</button>
                 <button>Delete</button>
             </div>
