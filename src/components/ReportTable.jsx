@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import './ReportTable.css'
 import DisplayBubble from "./DisplayBubble";
 import DisplayResponseHeaders from "./DisplayResponseHeaders";
@@ -27,6 +26,22 @@ export default function reportTable(){
         Navigate("/searches");
     }
 
+    function saveTable(){
+        const token = sessionStorage.getItem('login');
+        const urlId = dataJson?.url?.id;
+        fetch(`http://localhost:8081/saveUrl/${token}/${urlId}`,{
+            method:"GET"
+        })
+        .then(res => {
+            if (res.status !== 200){
+                throw new Error("Saving Error");
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     return(
         <>
             <div className="urlTable">
@@ -39,7 +54,8 @@ export default function reportTable(){
 
             <DisplayResponseHeaders headers={dataJson?.headers} />
             
-            <button onClick={() => navigateOver()}>Full History</button>
+            <button className='button2' onClick={() => navigateOver()}>Full History</button>
+            <button className='button2' onClick={() => saveTable()}>Save</button>
 
             </div>
         

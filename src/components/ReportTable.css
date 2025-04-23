@@ -1,6 +1,6 @@
 .urlTable{
     width: 900px;
-    background-color: lightblue;
+    background-color: white;
     border-radius: 15%;
     padding: 1.5rem 2rem;
     margin-top: 3rem;
@@ -13,6 +13,11 @@
     font-weight: bold;
     text-decoration: underline;
     color: black;
+}
+
+.button2{
+    background-color: rgb(56, 147, 47) !important;
+    color: white !important;
 }
 
 

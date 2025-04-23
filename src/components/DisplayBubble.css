@@ -9,6 +9,8 @@
 
 .rowTitle{
     font-size: 20px;
+    color: Black !important;
+    font-weight: 500;
 }
 
 .rowValue{

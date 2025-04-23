@@ -2,11 +2,13 @@ import SavedSearches from "../components/SavedSearches";
 import RecentSearches from "../components/RecentSearches";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
+import "./UserSearches.css";
 
 export default function UserSearches(){
 
     const [searches, setSearches] = useState([]);
     const token = sessionStorage.getItem("login");
+
 
     // Goes for api call on page load
     useEffect(()=>{
@@ -35,13 +37,13 @@ export default function UserSearches(){
 
     // Returns a page that has both the saved Searches and Recent Searches on the same thing will style this a little bit more just want to get the idea of it down
     return (
-        <>
+        <div className="searches">
             <Header></Header>
 
             <header>Saved Searches</header>
-            <SavedSearches searches={searches?.savedSearches || []}/>
+            <SavedSearches searches={searches?.savedSearches || []} setSearches={setSearches}/>
             <header>Recent Searches</header>
-            <RecentSearches searches={searches?.recentSearches || []}/>
-        </>
+            <RecentSearches searches={searches?.recentSearches || []} setSearches={setSearches}/>
+        </div>
     );
 }

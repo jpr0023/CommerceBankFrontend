@@ -56,7 +56,6 @@ function URLSearch() {
         .then((data) => {
             if (data !== null){
               sessionStorage.setItem("url",JSON.stringify(data));
-              console.log(data);
               navigate("/urlTable");
           }
           else{

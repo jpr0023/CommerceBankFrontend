@@ -1,11 +1,6 @@
 import './DisplayResponseHeaders.css'
-
 export default function DisplayResponseHeaders({headers}){
-
-
     return (
-
-
         <>
             <h2>Response Headers</h2>
             <div className="headerTable">
@@ -18,9 +13,6 @@ export default function DisplayResponseHeaders({headers}){
                         </p>
                     ))
                 }
-
-
-
             </div>
         </>
 
