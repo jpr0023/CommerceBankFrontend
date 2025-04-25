@@ -6,6 +6,11 @@ function Header() {
 
   function logout(){
     sessionStorage.removeItem("token");
+    let filler = sessionStorage.getItem("url");
+
+    if (filler){
+      sessionStorage.removeItem("url");
+    }
   }
 
   return (

@@ -2,11 +2,15 @@ import './ReportTable.css'
 import DisplayBubble from "./DisplayBubble";
 import DisplayResponseHeaders from "./DisplayResponseHeaders";
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+
 
 export default function reportTable(){
 
     const dataJson = JSON.parse(sessionStorage.getItem('url'));
     let title = dataJson?.url?.urlValue?.toLowerCase();
+    const [saveButton, setSaveButton] = useState("Save");
+
     let holder;
     const Navigate = useNavigate();
    
@@ -33,7 +37,11 @@ export default function reportTable(){
             method:"GET"
         })
         .then(res => {
-            if (res.status !== 200){
+            if (res.status === 200){
+                setSaveButton("Saved");
+                setTimeout(() => setSaveButton("Save"), 2500); 
+            }
+            else if (res.status !== 200){
                 throw new Error("Saving Error");
             }
         })
@@ -55,7 +63,7 @@ export default function reportTable(){
             <DisplayResponseHeaders headers={dataJson?.headers} />
             
             <button className='button2' onClick={() => navigateOver()}>Full History</button>
-            <button className='button2' onClick={() => saveTable()}>Save</button>
+            <button className='button2' onClick={() => saveTable()}>{saveButton}</button>
 
             </div>
         
