@@ -1,0 +1,62 @@
+.gradient-custom {
+  
+    background: #6a11cb;
+   
+    background: -webkit-linear-gradient(to right, rgb(169, 145, 194), rgba(37, 117, 252, 1));
+   
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+
+p{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+.create{
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+   
+}
+
+.user-label{
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-right: 650px;
+   
+}
+.pass-label{
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-right: 660px;
+   
+}
+
+.conf-label{
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-right: 575px;
+   
+}
+
+
+.form-control{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+
+
