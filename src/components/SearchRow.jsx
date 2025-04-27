@@ -1,11 +1,50 @@
 import { useNavigate } from "react-router-dom";
 import "./SearchRow.css"
+import { useState } from "react";
 
 export default function SearchRow({search, setSearches, component}){
     const nav = useNavigate();
     const token = sessionStorage.getItem('login');
+    const [renameClassName, setRenameClass] = useState("renameInvisible");
+    const [renameValue, setRename] = useState("");
     function renameSearch(id){
-        
+
+        fetch(`http://localhost:8081/saved/rename/${id}`,{
+            method:"PUT",
+            headers:{
+                "Content-Type": "text/plain"
+            },
+            body:renameValue
+        })
+        .then(res=>{
+            if (res.status == 204){
+                return fetch(`http://localhost:8081/user/searches/${token}`);
+            }
+            else{
+                throw new Error("Rename Failure");
+            }
+        })
+        .then((res) => {
+            if (res.status === 200){
+                return res.json();
+            }
+        })
+        .then((data) => {
+            setSearches(data);
+            setRename("");
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    function renameVisible(){
+        if (renameClassName === "renameInvisible"){
+            setRenameClass("renameVisible");
+        }
+        else{
+            setRenameClass("renameInvisible");
+        }
     }
 
     function saveSearch(id){
@@ -83,6 +122,43 @@ export default function SearchRow({search, setSearches, component}){
         })
     }
 
+    function recoverSearch(id){
+        fetch(`http://localhost:8081/deleted/recover/${id}/${token}`,{
+            method:"GET"
+        })
+        .then(res => {
+            if (res.status == 204){
+                return fetch(`http://localhost:8081/user/searches/${token}`);
+            }
+        
+            else if(res.status !== 204){
+                throw new Error("Recover Failed");
+            }
+        })
+        .then((res) => {
+            if (res.status === 200){
+                return res.json();
+            }
+            
+        })
+        .then((data) => {
+            setSearches(data);
+        })
+        .catch(error =>{
+            console.error("Error Recovering: ", error);
+        })
+    }
+
+    function renameInput(e){
+        setRename(e.target.value);
+        console.log(renameValue);
+    }
+
+    function clearText(){
+        setRename("");
+        setRenameClass("renameInvisible");
+    }
+
 
 
     if (search != null && component == 1){
@@ -93,7 +169,12 @@ export default function SearchRow({search, setSearches, component}){
         
             <div className="searchRow">
                 <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
-                <button className="button" onClick={() => renameSearch(search?.id)}>Rename</button>
+                <div className={`rename-input-group ${renameClassName}`}>
+                    <input type="text" onChange={renameInput} value={renameValue}/>
+                    <button onClick={() => renameSearch(search?.id)}>CheckMark</button>
+                    <button onClick={() => clearText()}>X Mark</button>
+                </div>
+                <button className="button" onClick = {renameVisible}>Rename</button>
                 <button className="button" onClick={() => rescanSearch(search?.url?.id)}>Rescan</button>
                 <button className="button" onClick={() => deleteSearch(search?.id)}>Delete</button>
             </div>
@@ -105,12 +186,22 @@ export default function SearchRow({search, setSearches, component}){
         return(
 
             <>
-            
-            
                 <div className="searchRow">
                     <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
                     <button className="button" onClick={() => rescanSearch(search?.url?.id)}>Rescan</button>
                     <button className="button" onClick = {() => saveSearch(search?.url?.id)}>Save</button>
+                </div>
+            </>
+        )
+    }
+    else if (search != null && component == 3){
+        return(
+
+            <>
+                <div className="searchRow">
+                    <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
+                    <button className="button" onClick={() => recoverSearch(search?.url?.id)}>Recover</button>
+                    
                 </div>
             </>
         )

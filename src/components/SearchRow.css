@@ -5,3 +5,61 @@
     margin-right: 5px;
     margin-left: 5px;
 }
+
+.renameInvisible{
+    visibility: hidden;
+}
+
+.renameVisible{
+    visibility: visible;
+}
+.searchRow {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .searchRow label {
+    flex-shrink: 0;
+    min-width: 200px;
+    font-weight: bold;
+  }
+  
+  .searchRow input[type="text"] {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 0.5rem;
+    width: 180px;
+    background-color: white;
+    color: black; /* adjust as needed */
+  }
+  
+  .searchRow button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .searchRow button:hover {
+    background-color: #eee;
+  }
+  
+  .searchRow .rename-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .rename-input-group button{
+    color: black;
+  }
+  
+

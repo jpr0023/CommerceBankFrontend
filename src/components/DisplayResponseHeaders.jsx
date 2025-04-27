@@ -7,10 +7,11 @@ export default function DisplayResponseHeaders({headers}){
                 
                 {
                     headers.map((headers,index) => (
-                        <p className='headerRow'> 
-                            <span className="headerTitle">{headers?.key}: </span>
-                            <span className="headerValue"> {headers?.value} </span>
-                        </p>
+                        <div className="headerRow">
+                            <div className="headerTitle">{headers?.key}:</div>
+                            <div className="headerValue">{headers?.value}</div>
+                        </div>
+
                     ))
                 }
             </div>

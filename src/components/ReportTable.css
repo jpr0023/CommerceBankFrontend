@@ -1,23 +1,51 @@
-.urlTable{
-    width: 900px;
+.urlTable {
+    width: 1200px;
     background-color: white;
-    border-radius: 15%;
+    border-radius: 15px; /* 15px, not 15% */
     padding: 1.5rem 2rem;
     margin-top: 3rem;
     color: black;
+    display: flex;
+    flex-direction: column; /* Main layout is vertical */
+    align-items: center;
 }
 
-.urlTitle{
+.urlTitle {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline;
     color: black;
+    margin-bottom: 1rem;
 }
 
-.button2{
+/* This wraps the two columns side-by-side */
+.urlContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Left column */
+.Left_Column {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+/* Right column */
+.Right_Column {
+    flex: 1;
+    padding-left: 1rem;
+}
+
+/* Buttons area */
+.button2 {
     background-color: rgb(56, 147, 47) !important;
     color: white !important;
+    margin: 0.5rem; /* Space between buttons */
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
-
-

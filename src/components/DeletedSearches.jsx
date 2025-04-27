@@ -10,9 +10,9 @@ export default function RecentSearches({searches, setSearches}){
 
             {rows.map((_,index)=>{
                 return index < searchesLength ?
-                    <SearchRow search={searches[index]} setSearches={setSearches} component={2}/>
+                    <SearchRow search={searches[index]} setSearches={setSearches} component={3}/>
                     :
-                    <SearchRow search={null} setSearches={setSearches} component={2}/>
+                    <SearchRow search={null} setSearches={setSearches} component={3}/>
                                 
             })
             }

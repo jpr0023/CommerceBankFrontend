@@ -1,5 +1,6 @@
 import SavedSearches from "../components/SavedSearches";
 import RecentSearches from "../components/RecentSearches";
+import DeletedSearches from "../components/DeletedSearches";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import "./UserSearches.css";
@@ -39,11 +40,21 @@ export default function UserSearches(){
     return (
         <div className="searches">
             <Header></Header>
-
+            <div className="saved-section">
             <header>Saved Searches</header>
             <SavedSearches searches={searches?.savedSearches || []} setSearches={setSearches}/>
-            <header>Recent Searches</header>
-            <RecentSearches searches={searches?.recentSearches || []} setSearches={setSearches}/>
+            </div>
+            <div className="bottom-section">
+                <div className="recent-section">
+                    <header>Recent Searches</header>
+                    <RecentSearches searches={searches?.recentSearches || []} setSearches={setSearches}/>
+                </div>
+                <div className="deleted-section">
+                    <header>Recently Deleted</header>
+                    <DeletedSearches searches={searches?.deletedSearches|| []} setSearches={setSearches}/>
+                </div>
+            </div>
+
         </div>
     );
 }

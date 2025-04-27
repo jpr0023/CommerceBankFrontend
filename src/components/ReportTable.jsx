@@ -2,7 +2,8 @@ import './ReportTable.css'
 import DisplayBubble from "./DisplayBubble";
 import DisplayResponseHeaders from "./DisplayResponseHeaders";
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import DisplayCerts from './Displaycerts';
 
 
 export default function reportTable(){
@@ -14,17 +15,13 @@ export default function reportTable(){
     let holder;
     const Navigate = useNavigate();
    
-        if (title.startsWith("https://www.")){
-            title = title.substring(12);
-        }
-        else if (title.startsWith("http://www.")){
-            title = title.substring(11);
-        }
-
-        title = title.charAt(0).toUpperCase() + title.slice(1);
+        useEffect(() => {
+            
+            if (!dataJson){
+                Navigate("/URLSearch",0)
+            }
+        }, [Navigate])
     
-    // Use effect to grab the length of the response headers?
-    // Have the 4 or 5 lines going over all of the other stuff
 
     function navigateOver(){
         Navigate("/searches");
@@ -49,27 +46,40 @@ export default function reportTable(){
             console.log(error);
         })
     }
-
+    if (dataJson){
     return(
         <>
             <div className="urlTable">
-            <p className="urlTitle">{title}</p>
+                <p className="urlTitle">{title}</p>
+                
+                <div className="urlContent">
+                    <div className='Left_Column'>
+                        <DisplayBubble title={'Response Code:'} value={dataJson?.responseCode}/>
+                        <DisplayBubble title={'Response Time:'} value={dataJson?.responseTime}/>
+                        <DisplayBubble title={'Server:'} value={dataJson?.server}/>
+                        <DisplayBubble title={"Cipher Suite:"} value={dataJson?.cipherSuite} />
+                        <DisplayCerts certs={dataJson?.certificateInfo}/>
+                    </div>
+                    <div className='Right_Column'>
+                        <DisplayResponseHeaders headers={dataJson?.headers} />
+                    </div>
+                </div>
 
-            <DisplayBubble title={'Response Code:'} value={dataJson?.responseCode}/>
-            <DisplayBubble title={'Response Time:'} value={dataJson?.responseTime}/>
-            <DisplayBubble title={'Server:'} value={dataJson?.server}/>
-            <DisplayBubble title={"Content-Type:"} value={dataJson?.contentType} />
-
-            <DisplayResponseHeaders headers={dataJson?.headers} />
-            
-            <button className='button2' onClick={() => navigateOver()}>Full History</button>
-            <button className='button2' onClick={() => saveTable()}>{saveButton}</button>
+                <div className="buttonContainer">
+                    <button className="button2" onClick={() => navigateOver()}>Full History</button>
+                    <button className="button2" onClick={() => saveTable()}>{saveButton}</button>
+                </div>
 
             </div>
         
         </>
     )
-
+    }
+    else{
+        return(
+            <></>
+        )
+    }
 
 
 
