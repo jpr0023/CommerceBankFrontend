@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./login.css"
 import Button from 'react-bootstrap/Button';
+import { sortUserPlugins } from 'vite';
 function Login() {
   const navigate = useNavigate();
 
@@ -65,16 +66,16 @@ function Login() {
       borderRadius: '150px',
       opacity: '0.8',
       }}>
-         <div class="login-container">
+         <div className="login-container">
       
-      <div class="rectangle-background"></div>
-      <header class="title-header">
+      <div className="rectangle-background"></div>
+      <header className="title-header">
            Commerce Bank URL Analyzer
         </header>
-        <header class="login-header">
+        <header className="login-header">
            Login, Welcome Back!
         </header>
-      <div class="login-form">
+      <div className="login-form">
     
       <form>
            <div className="form-group">
