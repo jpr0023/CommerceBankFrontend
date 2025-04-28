@@ -62,7 +62,7 @@ export default function CreateAccount(){
 
         <>
         
-            <header className="create">Create Account</header>
+            <header className="create">Hello! Let's Create An Account</header>
             <p>
             <label className="user-label">Username:</label>  
             <input type="text" name="username" class="form-control" onChange={changeUserDetails} placeholder="Username"/>
@@ -78,7 +78,7 @@ export default function CreateAccount(){
                 <input type="password" name="confirmPassword" class="form-control" onChange={changeUserDetails} placeholder="Confirm Password"/>
             </p>
             
-            <Button variant = "success" value="Create Account" onClick={submit} className="submit">Create Account</Button>
+            <button variant = "success" value="Create Account" onClick={submit} className="submit">Create Account</button>
             
             
         

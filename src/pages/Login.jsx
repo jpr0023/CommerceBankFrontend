@@ -68,8 +68,11 @@ function Login() {
          <div class="login-container">
       
       <div class="rectangle-background"></div>
+      <header class="title-header">
+           Commerce Bank URL Analyzer
+        </header>
         <header class="login-header">
-          Login, Welcome Back!
+           Login, Welcome Back!
         </header>
       <div class="login-form">
     
@@ -83,7 +86,7 @@ function Login() {
             <input type="password" className="form-control" name='password' onChange={changeUserDetails} placeholder="Enter Password"/>
            </div>
            <a href='/createAccount'><p>New User? Resgister Now</p></a>
-             <Button variant = "success"  className="btn" onClick={handleLogin}>Login</Button>
+             <button variant = "success"  className="login-btn" onClick={handleLogin}>Login</button>
              
           </form>
       </div>

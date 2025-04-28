@@ -11,13 +11,12 @@ body{
 .log{
     font-size: 20px;
     color: white;
-    padding-right: 290px;
+    padding-right: 230px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
 .login-header{
-    padding-top: 30px;
     margin-top: 30px;
     text-align: center;
     font-size: 30px;
@@ -27,8 +26,20 @@ body{
     min-width: 400px;
 }
 
+.title-header{
+  padding-top: 20px;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  min-width: 400px;
+}
+
 a p {
-    color: rgb(0, 72, 255);
+    color: rgb(0, 238, 255);
+    font-weight: bold;
     border-bottom: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
@@ -73,9 +84,14 @@ a p {
     
   }
 
-  .btn {
-    width: 300px;
+  .login-btn{
+    background-color: rgba(24, 198, 62, 0.88); 
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-left: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 30px;
-    padding: 20px;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
+    min-width: 230px;
   }

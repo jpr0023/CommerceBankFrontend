@@ -50,7 +50,7 @@ export default function reportTable(){
     return(
         <>
             <div className="urlTable">
-                <p className="urlTitle">{title}</p>
+                <p className="urlTitle">URL: {title}</p>
                 
                 <div className="urlContent">
                     <div className='Left_Column'>

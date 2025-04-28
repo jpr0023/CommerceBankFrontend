@@ -42,16 +42,20 @@ export default function UserSearches(){
             <Header></Header>
             <div className="saved-section">
             <header className="saving">Saved Searches</header>
-            <SavedSearches searches={searches?.savedSearches || []} setSearches={setSearches}/>
+            <SavedSearches className = "labels" searches={searches?.savedSearches || []} setSearches={setSearches}/>
             </div>
             <div className="bottom-section">
                 <div className="recent-section">
                     <header className="saving">Recent Searches</header>
-                    <RecentSearches searches={searches?.recentSearches || []} setSearches={setSearches}/>
+
+                    <p>
+                     <RecentSearches className = "labels"searches={searches?.recentSearches || []} setSearches={setSearches}/>
+                    </p>
+                
                 </div>
                 <div className="deleted-section">
                     <header className="saving">Recently Deleted</header>
-                    <DeletedSearches searches={searches?.deletedSearches|| []} setSearches={setSearches}/>
+                    <DeletedSearches className = "labels"searches={searches?.deletedSearches|| []} setSearches={setSearches}/>
                 </div>
             </div>
 

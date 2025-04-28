@@ -170,9 +170,9 @@ export default function SearchRow({search, setSearches, component}){
             <div className="saved-row">
                 <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
                 <div className={`rename-input-group ${renameClassName}`}>
-                    <input type="text" onChange={renameInput} value={renameValue}/>
-                    <button onClick={() => renameSearch(search?.id)}>CheckMark</button>
-                    <button onClick={() => clearText()}>X Mark</button>
+                    <input className="fieldid" type="text" onChange={renameInput} value={renameValue}/>
+                    <button className="save-btn" onClick={() => renameSearch(search?.id)}>Confirm</button>
+                    <button className="delete-btn" onClick={() => clearText()}>Done</button>
                 </div>
                 <button className="rename-btn" onClick = {renameVisible}>Rename</button>
                 <button className="rescan-btn" onClick={() => rescanSearch(search?.url?.id)}>Rescan</button>
@@ -200,7 +200,7 @@ export default function SearchRow({search, setSearches, component}){
             <>
                 <div className="deleted-row">
                     <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
-                    <button className="button" onClick={() => recoverSearch(search?.url?.id)}>Recover</button>
+                    <button className="rename-btn" onClick={() => recoverSearch(search?.url?.id)}>Recover</button>
                     
                 </div>
             </>

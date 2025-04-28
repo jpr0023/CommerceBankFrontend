@@ -5,15 +5,19 @@
     margin-right: 5px;
     margin-left: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
 }
 
 .rescan-btn{
-    background-color: rgba(24, 198, 62, 0.719); 
+    background-color: rgba(24, 198, 62, 0.88); 
     border-radius: 35px;
     color: rgb(255, 255, 255);
     margin-right: 5px;
     margin-left: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
 }
 
 .delete-btn{
@@ -23,35 +27,42 @@
     margin-right: 5px;
     margin-left: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
 }
 
 .save-btn{
-    background-color: rgba(24, 198, 62, 0.719); 
+    background-color: rgba(24, 198, 62, 0.88); 
     border-radius: 35px;
     color: rgb(255, 255, 255);
     margin-right: 5px;
     margin-left: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
 }
 
 .saved-row{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #000;
+    color: #ffffff;
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 475px;
     max-width: 300px;
+    text-align: left;
 }
 
 .recent-row{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #000;
+    color: #ffffff;
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 600px;
+    padding-right: 700px;
+    text-align: left;
     max-width: 300px;
+    font-size: 12px;
 }
 
 .rename-input-group {
@@ -72,6 +83,7 @@
 .recent-row,
 .deleted-row {
     display: flex;
+    max-width: 200px;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
@@ -79,9 +91,29 @@
     gap: 0.5rem;
 }
 
-.saved-row label,
-.recent-row label,
 .deleted-row label {
-    font-size: 1.1rem;
+    font-size: .8 rem;
     flex-grow: 1;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: left;
+}
+.saved-row label {
+    font-size: .8 rem;
+    flex-grow: 1;
+    min-width: 300px;
+    max-width: 300px;
+}
+.recent-row label {
+    font-size: .8 rem;
+    flex-grow: 1;
+    min-width: 300px;
+    max-width: 300px;
+
+}
+
+.fieldid{
+    background-color: #ffffff;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
