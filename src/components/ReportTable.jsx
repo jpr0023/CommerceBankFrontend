@@ -9,16 +9,25 @@ import DisplayCerts from './Displaycerts';
 export default function reportTable(){
 
     const dataJson = JSON.parse(sessionStorage.getItem('url'));
-    let title = dataJson?.url?.urlValue?.toLowerCase();
+    const [title, setTitle] = useState("Url");
     const [saveButton, setSaveButton] = useState("Save");
-
-    let holder;
     const Navigate = useNavigate();
    
         useEffect(() => {
             
             if (!dataJson){
                 Navigate("/URLSearch",0)
+            }
+            else{
+                let filler = dataJson?.url?.urlValue;
+
+                filler = filler.substring(0,4);
+                console.log(filler);
+
+                if (filler === "www."){
+                    filler = dataJson?.url?.urlValue.substring(4)
+                    setTitle(filler.charAt(0).toUpperCase() + filler.substring(1));
+                }
             }
         }, [Navigate])
     

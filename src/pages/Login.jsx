@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./login.css"
 import Button from 'react-bootstrap/Button';
-import { sortUserPlugins } from 'vite';
 function Login() {
   const navigate = useNavigate();
 
@@ -19,7 +18,8 @@ function Login() {
   console.log(login);
   }
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     if (login.username == "" || login.password == ""){
       setText("Both Username and Password are needed.")
     }
@@ -87,9 +87,9 @@ function Login() {
             <input type="password" className="form-control" name='password' onChange={changeUserDetails} placeholder="Enter Password"/>
            </div>
            <a href='/createAccount'><p>New User? Resgister Now</p></a>
-             <button variant = "success"  className="login-btn" onClick={handleLogin}>Login</button>
+             <button variant = "success" className="login-btn" onClick={handleLogin}>Login</button>
              
-          </form>
+        </form>
       </div>
     </div>
         
