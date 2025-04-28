@@ -1,0 +1,62 @@
+.headerRow{
+    display: flex;
+    margin-bottom: .75rem;
+}
+
+.headerValue{
+    word-break: break-all;
+    max-width: 75%;
+    color: black;
+}
+
+.headerTitle{
+    width: 25%;
+    color: black;
+}
+
+.headerTable{
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    border-radius: 10px;
+    padding: 1.5rem;
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid #ccc; /* cleaner soft border instead of dashed */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Each header pair (Title + Value) */
+.headerRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Title for each header field */
+.headerTitle {
+    font-weight: bold;
+    color: black;
+    min-width: 150px; /* Fixed width just like Certs */
+    text-align: right;
+    margin-right: 1rem;
+}
+
+/* Value (actual header data) */
+.headerValue {
+    color: black;
+    word-break: break-word;
+    flex: 1;
+}
+
+/* Scrollbar styling (same) */
+.headerTable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.headerTable::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 4px;
+}

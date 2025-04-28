@@ -1,0 +1,61 @@
+.certTable {
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    border-radius: 10px;
+    padding: 1.5rem;
+    max-height: 365px;
+    overflow-y: auto;
+    border: 1px solid #ccc; /* Softer full border */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between cert sections */
+}
+
+.certRow {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-bottom: 1px solid #ccc; /* Space between certField blocks */
+}
+
+.certField {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+.certRow:last-child{
+    border-bottom: none;
+}
+
+/* .certField:first-child{
+    border-top: 1px solid #ccc;
+} */
+
+.certTitle {
+    font-weight: bold;
+    color: black;
+    min-width: 150px;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.certValue {
+    color: black;
+    word-break: break-word;
+}
+
+
+
+/* Optional: Better scrollbar */
+.certTable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.certTable::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 4px;
+}

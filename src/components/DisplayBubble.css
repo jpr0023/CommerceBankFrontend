@@ -1,0 +1,18 @@
+.bubbleRow{
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem 2rem;
+    background-color: white;
+    border-radius: 50px;
+    margin-bottom: .3rem;
+}
+
+.rowTitle{
+    font-size: 20px;
+    color: Black !important;
+    font-weight: 500;
+}
+
+.rowValue{
+    font-size: 20px;
+}

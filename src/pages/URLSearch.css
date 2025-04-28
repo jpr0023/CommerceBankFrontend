@@ -1,0 +1,25 @@
+.invalidInvisible{
+    visibility: hidden;
+}
+
+
+.invalidVisible{
+    visibility:visible;
+}
+
+.form-control{
+    width: 250px;
+    
+}
+
+.analyze{
+    background-color: rgba(24, 198, 62, 0.88); 
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-left: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
+    min-width: 400px;
+}
