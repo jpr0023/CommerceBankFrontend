@@ -22,7 +22,6 @@ function URLSearch() {
         setTimeout(() => navigate("/"), 0); // Delay just enough to prevent early render issues
       }
       console.log(sessionStorage.getItem("login"));
-      console.log(sessionStorage.getItem("login"));
     }, [navigate]);
     
     
@@ -39,7 +38,6 @@ function URLSearch() {
         })
         .then(res=>{
             if(res.status === 200){
-              console.log(res.headers.get("Content-Type"));
               console.log(res.headers.get("Content-Type"));
               return res.json();
             }
@@ -68,7 +66,6 @@ function URLSearch() {
         setUrls({
          ...urls, [e.target.name]:e.target.value  
         });
-        console.log(urls);
         console.log(urls);
     }
 
