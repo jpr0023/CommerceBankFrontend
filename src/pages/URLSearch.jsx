@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import "./URLSearch.css";
 
 function URLSearch() {
 
@@ -11,6 +12,7 @@ function URLSearch() {
       });
 
     const navigate = useNavigate();  
+    const [invalidInput, setInvalid] = useState("invalidInvisible")
 
 
     useEffect(() => {
@@ -21,29 +23,8 @@ function URLSearch() {
       console.log(sessionStorage.getItem("login"));
     }, [navigate]);
     
-    
-    function validateURL(){
-        fetch("http://localhost:8081/analyze",{
-          method:"POST",
-          headers:{
-            "Content-Type" : "application/json",
-          },
-          body: JSON.stringify(urls) 
-        })
-        .then(res =>{
-            if(res.status === 200){
-              return true;
-            }
-            else{
-              throw new Error("Bad Request");
-            }
-        })
-        .catch((error) => console.log(error));
-    }
 
     const submitURL =(e)=>{
-
-        if (() => validateURL()){
         e.preventDefault();
         urls.token = sessionStorage.getItem("login");
         fetch("http://localhost:8081/analyze", {
@@ -57,7 +38,14 @@ function URLSearch() {
             if(res.status === 200){
               console.log(res.headers.get("Content-Type"));
               return res.json();
-            }else{
+            }
+            else if (res.status === 400){
+              if (invalidInput === "invalidInvisible"){
+                setInvalid("invalidVisible");
+              }
+              return null
+            }
+            else{
               return null;
             }
           })
@@ -65,17 +53,13 @@ function URLSearch() {
             if (data !== null){
               sessionStorage.setItem("url",JSON.stringify(data));
               navigate("/urlTable");
-          }
-          else{
-            alert("Failed");
-          }
+            }
+            else{
+              console.log("Fail search")
+            }
         })    
       }
-      else{
-
-      }
-    }  
-
+      
     const changeValue=(e)=>{
         setUrls({
          ...urls, [e.target.name]:e.target.value  
@@ -92,8 +76,9 @@ function URLSearch() {
                 <Form.Group controlId="URL">
                     <Form.Label>Enter URL to Analyze</Form.Label>
                     <Form.Control className="form-control"  type="text" placeholder="www.example.com" onChange = {changeValue} name="website" value={urls.website}/>
+                    
                 </Form.Group>
-
+                <p className={invalidInput}>This is not a valid input.<br></br> Ex: www.google.com</p>
                 <Button variant="success" type="submit">
                     Submit  
                 </Button>

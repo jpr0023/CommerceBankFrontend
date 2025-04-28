@@ -1,0 +1,13 @@
+.invalidInvisible{
+    visibility: hidden;
+}
+
+
+.invalidVisible{
+    visibility:visible;
+}
+
+.form-control{
+    width: 250px;
+    
+}
