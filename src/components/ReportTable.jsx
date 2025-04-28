@@ -28,6 +28,7 @@ export default function reportTable(){
                     filler = dataJson?.url?.urlValue.substring(4)
                     setTitle(filler.charAt(0).toUpperCase() + filler.substring(1));
                 }
+                console.log(dataJson);
             }
         }, [Navigate])
     
