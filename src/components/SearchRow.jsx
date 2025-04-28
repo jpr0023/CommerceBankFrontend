@@ -167,16 +167,16 @@ export default function SearchRow({search, setSearches, component}){
         <>
 
         
-            <div className="searchRow">
+            <div className="saved-row">
                 <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
                 <div className={`rename-input-group ${renameClassName}`}>
                     <input type="text" onChange={renameInput} value={renameValue}/>
                     <button onClick={() => renameSearch(search?.id)}>CheckMark</button>
                     <button onClick={() => clearText()}>X Mark</button>
                 </div>
-                <button className="button" onClick = {renameVisible}>Rename</button>
-                <button className="button" onClick={() => rescanSearch(search?.url?.id)}>Rescan</button>
-                <button className="button" onClick={() => deleteSearch(search?.id)}>Delete</button>
+                <button className="rename-btn" onClick = {renameVisible}>Rename</button>
+                <button className="rescan-btn" onClick={() => rescanSearch(search?.url?.id)}>Rescan</button>
+                <button className="delete-btn" onClick={() => deleteSearch(search?.id)}>Delete</button>
             </div>
         </>
     );
@@ -186,10 +186,10 @@ export default function SearchRow({search, setSearches, component}){
         return(
 
             <>
-                <div className="searchRow">
+                <div className="recent-row">
                     <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
-                    <button className="button" onClick={() => rescanSearch(search?.url?.id)}>Rescan</button>
-                    <button className="button" onClick = {() => saveSearch(search?.url?.id)}>Save</button>
+                    <button className="rescan-btn" onClick={() => rescanSearch(search?.url?.id)}>Rescan</button>
+                    <button className="save-btn" onClick = {() => saveSearch(search?.url?.id)}>Save</button>
                 </div>
             </>
         )
@@ -198,7 +198,7 @@ export default function SearchRow({search, setSearches, component}){
         return(
 
             <>
-                <div className="searchRow">
+                <div className="deleted-row">
                     <label>{search?.urlName !== null ? search?.urlName : search?.url?.urlValue}</label>
                     <button className="button" onClick={() => recoverSearch(search?.url?.id)}>Recover</button>
                     
@@ -212,7 +212,6 @@ export default function SearchRow({search, setSearches, component}){
             <>
                 <div className="searchRow">
                     <></>
-
                 </div>
             </>
         ) 

@@ -1,4 +1,20 @@
-.headerTable {
+.headerRow{
+    display: flex;
+    margin-bottom: .75rem;
+}
+
+.headerValue{
+    word-break: break-all;
+    max-width: 75%;
+    color: black;
+}
+
+.headerTitle{
+    width: 25%;
+    color: black;
+}
+
+.headerTable{
     background-color: white;
     margin-top: 1rem;
     margin-bottom: 0rem;

@@ -48,23 +48,55 @@ function Login() {
   };
 
   return (
+    
+    
+    <div>
+      <div style={{ 
+      backgroundImage: `url('src/pages/loginback.jpg')`,
+     
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+      alignContent: 'center',
+      paddingLeft: '270px',
+      paddingRight: '270px',
+      backgroundRepeat: 'no-repeat',
+      height: '550px',
+      width: '1000px',
+      borderRadius: '150px',
+      opacity: '0.8',
+      }}>
+         <div class="login-container">
+      
+      <div class="rectangle-background"></div>
+        <header class="login-header">
+          Login, Welcome Back!
+        </header>
+      <div class="login-form">
+    
+      <form>
+           <div className="form-group">
+            <label className='log'>Username:</label>
+            <input type="text" className="form-control" name='username' onChange={changeUserDetails} placeholder="Enter Username"/>
+           </div>
+           <div className="form-group">
+            <label className='log'>Password:</label>
+            <input type="password" className="form-control" name='password' onChange={changeUserDetails} placeholder="Enter Password"/>
+           </div>
+           <a href='/createAccount'><p>New User? Resgister Now</p></a>
+             <Button variant = "success"  className="btn" onClick={handleLogin}>Login</Button>
+             
+          </form>
+      </div>
+    </div>
+        
+      </div>
+      
+    
 
-    <form>
-      <header>
-        Login
-      </header>
-       <div className="form-group">
-        <label>Username</label>
-        <input type="text" className="form-control" name='username' onChange={changeUserDetails} placeholder="Enter Username"/>
-       </div>
-       <div className="form-group">
-        <label>Password</label>
-        <input type="password" className="form-control" name='password' onChange={changeUserDetails} placeholder="Enter Password"/>
-       </div>
-       <a href='/createAccount'><p>Create Account</p></a>
-         <Button variant = "success"  className="btn btn-primary" onClick={handleLogin}>Submit</Button>
-         
-      </form>
+    </div>
+
+   
+    
 
     
     

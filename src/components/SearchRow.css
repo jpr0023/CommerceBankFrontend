@@ -1,65 +1,87 @@
-.button{
-    background-color: white; 
-    border-radius: 15%;
-    color: black;
+.rename-btn{
+    background-color: rgba(53, 111, 199, 0.692); 
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
     margin-right: 5px;
     margin-left: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.renameInvisible{
-    visibility: hidden;
+.rescan-btn{
+    background-color: rgba(24, 198, 62, 0.719); 
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-left: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.renameVisible{
-    visibility: visible;
+.delete-btn{
+    background-color: rgba(255, 0, 0, 0.664); 
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-left: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.searchRow {
+
+.save-btn{
+    background-color: rgba(24, 198, 62, 0.719); 
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-left: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.saved-row{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #000;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 475px;
+    max-width: 300px;
+}
+
+.recent-row{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #000;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 600px;
+    max-width: 300px;
+}
+
+.rename-input-group {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 1rem;
+    gap: 0.25rem;
+}
+
+.renameInvisible {
+    display: none;
+}
+
+.renameVisible {
+    display: flex;
+    align-items: center;
+}
+.saved-row,
+.recent-row,
+.deleted-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 1rem;
-  }
-  
-  .searchRow label {
-    flex-shrink: 0;
-    min-width: 200px;
-    font-weight: bold;
-  }
-  
-  .searchRow input[type="text"] {
-    padding: 0.4rem;
-    font-size: 0.9rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-right: 0.5rem;
-    width: 180px;
-    background-color: white;
-    color: black; /* adjust as needed */
-  }
-  
-  .searchRow button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-    border-radius: 6px;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  
-  .searchRow button:hover {
-    background-color: #eee;
-  }
-  
-  .searchRow .rename-input-group {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
+    padding: 0 2rem; /* optional: adds side padding */
+    gap: 0.5rem;
+}
 
-  .rename-input-group button{
-    color: black;
-  }
-  
-
+.saved-row label,
+.recent-row label,
+.deleted-row label {
+    font-size: 1.1rem;
+    flex-grow: 1;
+}

@@ -20,7 +20,7 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/urlTable">URL Table</Nav.Link>
+            <Nav.Link href="/urlTable">Analyzed Info</Nav.Link>
             <Nav.Link href="/searches">Your Searches</Nav.Link>
             <Nav.Link href="/" onClick={logout}>Logout</Nav.Link>
           </Nav>

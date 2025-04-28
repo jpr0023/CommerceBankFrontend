@@ -12,6 +12,7 @@ function URLSearch() {
       });
 
     const navigate = useNavigate();  
+
     const [invalidInput, setInvalid] = useState("invalidInvisible")
 
 
@@ -21,7 +22,9 @@ function URLSearch() {
         setTimeout(() => navigate("/"), 0); // Delay just enough to prevent early render issues
       }
       console.log(sessionStorage.getItem("login"));
+      console.log(sessionStorage.getItem("login"));
     }, [navigate]);
+    
     
 
     const submitURL =(e)=>{
@@ -36,6 +39,7 @@ function URLSearch() {
         })
         .then(res=>{
             if(res.status === 200){
+              console.log(res.headers.get("Content-Type"));
               console.log(res.headers.get("Content-Type"));
               return res.json();
             }
@@ -65,23 +69,26 @@ function URLSearch() {
          ...urls, [e.target.name]:e.target.value  
         });
         console.log(urls);
+        console.log(urls);
     }
 
 
     return (
       
         <div>
+          <img className = "logo" src="src/pages/logo.png" alt="CommerceBankLogo"/>
             <Header></Header>
             <Form onSubmit = {submitURL}>
                 <Form.Group controlId="URL">
-                    <Form.Label>Enter URL to Analyze</Form.Label>
+                    <Form.Label className = "label">Enter URL to Analyze:</Form.Label>
                     <Form.Control className="form-control"  type="text" placeholder="www.example.com" onChange = {changeValue} name="website" value={urls.website}/>
                     
                 </Form.Group>
                 <p className={invalidInput}>This is not a valid input.<br></br> Ex: www.google.com</p>
-                <Button variant="success" type="submit">
-                    Submit  
-                </Button>
+                <Button className = "btn" variant="success" type="submit">
+                    Analyze URL </Button>
+                
+                
             </Form>
         </div>
       );

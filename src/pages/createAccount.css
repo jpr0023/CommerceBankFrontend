@@ -9,18 +9,53 @@
 
 p{
     font-size: 20px;
-    font-weight: bold;
     color: white;
     text-align: center;
     margin-top: 20px;
+    
 }
 
-header{
+.create{
     padding: 20px;
     text-align: center;
     font-size: 35px;
     color: white;
-    font-weight: bold;
+   
+}
+
+.user-label{
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-right: 650px;
+   
+}
+.pass-label{
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-right: 660px;
+   
+}
+
+.conf-label{
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-right: 575px;
+   
+}
+
+
+.form-control{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
 }
 
 

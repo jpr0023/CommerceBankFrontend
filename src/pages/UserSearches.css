@@ -1,3 +1,45 @@
+.label{
+    font-size: 35px;
+    color: white;
+    padding-right: 870px;
+    margin-bottom: 600px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.btn{
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 30px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo{
+    width: 300px;
+    height: 300px;
+    margin-top: -100px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    margin-left: 1000px;
+}
+
+.form-control{
+    padding-bottom: 1000px;
+}
+
+.saving {
+    padding-top: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 2.25rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+}
+
 .searches {
     display: flex;
     flex-direction: column;
@@ -11,7 +53,8 @@
     padding: 2rem;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.05);
-  }
+    min-height: 400px;
+}
   
   .bottom-section {
     display: flex;
@@ -22,6 +65,7 @@
     flex: 1;
     padding: 1.5rem;
     border-radius: 10px;
+    width: 500px;
     background-color: rgba(255, 255, 255, 0.05);
   }
   
@@ -58,4 +102,3 @@
       flex-direction: column;
     }
   }
-  

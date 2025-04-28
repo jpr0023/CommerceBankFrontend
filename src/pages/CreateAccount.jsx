@@ -62,16 +62,19 @@ export default function CreateAccount(){
 
         <>
         
-            <header>Create Account</header>
-            <p>User Name:
+            <header className="create">Create Account</header>
+            <p>
+            <label className="user-label">Username:</label>  
             <input type="text" name="username" class="form-control" onChange={changeUserDetails} placeholder="Username"/>
             </p>
             
-            <p>Password:
+            <p>
+            <label className="pass-label">Password:</label>
                 <input type="password" name="password" class="form-control" onChange={changeUserDetails} placeholder="Password"/>
             </p>
             
-            <p> Confirm Password:
+            <p> 
+            <label className="conf-label">Confirm Password: </label>
                 <input type="password" name="confirmPassword" class="form-control" onChange={changeUserDetails} placeholder="Confirm Password"/>
             </p>
             
